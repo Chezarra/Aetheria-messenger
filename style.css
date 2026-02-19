@@ -1,0 +1,131 @@
+/* ===== Основное тело ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2c2c3e);
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ===== Контейнер ===== */
+.container {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #2a2a3f;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* ===== Кнопки ===== */
+.connection button, .input-area button {
+    background-color: #4a4aff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 5px;
+}
+
+.connection button:hover, .input-area button:hover {
+    background-color: #6a6aff;
+    transform: translateY(-2px);
+}
+
+/* ===== Поля ввода ===== */
+textarea {
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px;
+    border: none;
+    resize: none;
+    background: #3a3a50;
+    color: #f0f0f0;
+}
+
+input#message {
+    flex: 1;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: none;
+    background: #3a3a50;
+    color: #f0f0f0;
+}
+
+/* ===== Окно чата ===== */
+.chat-window {
+    border: 1px solid #444;
+    background: #222233;
+    height: 250px;
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 12px;
+
+    display: flex;             /* flex-колонка для сообщений */
+    flex-direction: column;    /* сообщения сверху вниз */
+    gap: 6px;                  /* расстояние между сообщениями */
+}
+
+/* ===== Сообщения ===== */
+.message {
+    padding: 8px 12px;
+    border-radius: 20px;
+    max-width: 75%;
+    word-wrap: break-word;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.3s forwards;
+    margin-bottom: 6px;
+}
+
+/* Мои сообщения справа */
+.message.you {
+    background: #4a4aff;
+    color: white;
+    align-self: flex-end;
+}
+
+/* Сообщения друга слева, яркий цвет */
+.message.friend {
+    background: #e9e9e9;  /* яркий голубой */
+    color: #000000;        /* черный текст для контраста */
+    align-self: flex-start;
+}
+
+/* Анимация появления */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#chat {
+    display: flex;
+    flex-direction: column;   /* сообщения сверху вниз */
+    gap: 6px;                 /* расстояние между сообщениями */
+}
+/* ===== Поле для никнейма ===== */
+.nickname-area input {
+    width: 30%;                  /* занимает всю ширину контейнера */
+    padding: 10px 12px;           /* внутренние отступы */
+    border-radius: 12px;          /* скруглённые края, как у чат-бабблов */
+    border: none;                  /* без стандартной рамки */
+    margin-bottom: 10px;           /* отступ снизу */
+    background: #3a3a50;           /* тёмный фон, как у сообщений */
+    color: #f0f0f0;                /* светлый текст */
+    font-size: 16px;               /* удобный размер шрифта */
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3); /* лёгкая тень внутри */
+    outline: none;                 /* убираем рамку при фокусе */
+    transition: 0.3s;              /* плавное изменение при фокусе */
+}
+
+/* эффект при фокусе */
+.nickname-area input:focus {
+    background: #4a4a6a;           /* чуть светлее при фокусе */
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);
+}
