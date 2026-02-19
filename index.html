@@ -2,31 +2,41 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>P2P Chat</title>
+<title>P2P Messenger</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+<div class="container">
 
-<h2>Aetheria Messenger</h2>
+    <h2>Aetheria Messenger</h2>
 
-<button onclick="createOffer()">Создать комнату</button>
-<button onclick="joinRoom()">Подключиться</button>
+    <div class="nickname-area">
+    <input id="nickname" placeholder="Ваш никнейм">
+</div>
 
-<p>Offer:</p>
-<textarea id="offer" rows="6" cols="60"></textarea>
+    <div class="connection">
+        <button onclick="createOffer()">Создать комнату</button>
+        <button onclick="joinRoom()">Подключиться</button>
+        <p>Offer:</p>
+        <textarea id="offer" rows="4" cols="50"></textarea>
+        <p>Answer:</p>
+        <textarea id="answer" rows="4" cols="50"></textarea>
+    </div>
 
-<p>Answer:</p>
-<textarea id="answer" rows="6" cols="60"></textarea>
+    <div class="chat-window" id="chat-window">
+        <div id="chat"></div>
+    </div>
 
-<hr>
+    <div class="input-area">
+        <input id="message" placeholder="Введите сообщение...">
+        <button onclick="sendMessage()">Отправить</button>
+    </div>
 
-<input id="message" placeholder="Сообщение">
-<button onclick="sendMessage()">Send</button>
-
-<pre id="chat"></pre>
+</div>
 
 <script src="app.js"></script>
-
 </body>
 </html>
+
 
