@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>P2P Chat</title>
+</head>
+
+<body>
+
+<h2>Lialis Messenger</h2>
+
+<button onclick="createOffer()">Создать комнату</button>
+<button onclick="joinRoom()">Подключиться</button>
+
+<p>Offer:</p>
+<textarea id="offer" rows="6" cols="60"></textarea>
+
+<p>Answer:</p>
+<textarea id="answer" rows="6" cols="60"></textarea>
+
+<hr>
+
+<input id="message" placeholder="Сообщение">
+<button onclick="sendMessage()">Send</button>
+
+<pre id="chat"></pre>
+
+<script src="app.js"></script>
+
+</body>
+</html>
